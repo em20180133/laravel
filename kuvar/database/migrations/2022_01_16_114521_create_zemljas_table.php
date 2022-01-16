@@ -15,8 +15,8 @@ class CreateZemljasTable extends Migration
     {
         Schema::create('zemljas', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

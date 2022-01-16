@@ -15,8 +15,10 @@ class CreateVrstasTable extends Migration
     {
         Schema::create('vrstas', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
+           
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
+
             $table->timestamps();
         });
     }
