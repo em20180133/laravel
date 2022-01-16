@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Vrsta extends Model
 {
     use HasFactory;
+
+
+
+    
 }

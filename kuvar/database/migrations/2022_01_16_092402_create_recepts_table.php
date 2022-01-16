@@ -21,7 +21,8 @@ class CreateReceptsTable extends Migration
             $table->timestamps();
             $table->timestamp('pusblished_at')->nullable();
             $table->foreignId('vrsta_id');
-            $table->foreignId('zemljaporekla_id');
+            $table->foreignId('zemlja_id');
+            
         });
     }
 

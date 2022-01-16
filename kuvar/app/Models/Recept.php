@@ -9,4 +9,15 @@ class Recept extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function vrsta()
+    {
+        return $this->belongsTo(Vrsta::class);
+    }
+
+    public function zemlja()
+    {
+        return $this->belongsTo(Zemlja::class);
+    }
+
 }
