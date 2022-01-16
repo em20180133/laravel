@@ -9,7 +9,10 @@ class Vrsta extends Model
 {
     use HasFactory;
 
+    public function recepti()
+    {
+        return $this->hasMany(Recept::class);
+    }
 
 
-    
 }
