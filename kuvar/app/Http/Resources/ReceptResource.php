@@ -21,7 +21,7 @@ class ReceptResource extends JsonResource
             'title'=>$this->resource->title,
             'body'=>$this->resource->body,
             'vrsta'=>new VrstaResource($this->resource->vrsta),
-            'zemlja'=>$this->resource->zemlja,
+            'zemlja'=>new ZemljaResource($this->resource->zemlja),
             'user' => new UserResource($this->resource->user)
         ];
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\ReceptController;
 use App\Http\Controllers\ReceptTestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VrstaController;
+use App\Http\Controllers\ZemljaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //Route::get('recepts',[ReceptTestController::class,'index']);
 Route::resource('recepts', ReceptController::class);
 Route::resource('vrstas', VrstaController::class);
+Route::resource('zemljas', ZemljaController::class);
