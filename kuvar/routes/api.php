@@ -32,10 +32,24 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/users', [UserController::class, 'index']);
 Route::get('/users/{id}', [UserController::class, 'show']);
 
-Route::resource('recepts', ReceptController::class);
-Route::resource('vrstas', VrstaController::class);
-Route::resource('zemljas', ZemljaController::class);
+//Route::resource('recepts', ReceptController::class);
+//Route::resource('vrstas', VrstaController::class);
+//Route::resource('zemljas', ZemljaController::class);
 
 Route::get('/users/{id}/recepts', [UserReceptController::class, 'index'])->name('users.recepts.index');
 
+Route::post('/register', [AuthController::class, 'register']);
 
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get('/profile', function (Request $request) {
+        return auth()->user();
+    });
+
+    Route::resource('recepts', ReceptController::class)->only(['update', 'store', 'destroy']);
+
+    Route::post('/logout', [AuthController::class, 'logout']);
+});
+
+Route::resource('recepts', ReceptController::class)->only(['index']);
